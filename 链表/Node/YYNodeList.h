@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 //递归
 - (void)reverseNodeListMethod3:(YYNode *)tmpNode;
+
+/**
+ 判断是否存在环
+ */
++ (BOOL)checkHaveLoop:(YYNodeList *)nodeList;
 @end
 
 NS_ASSUME_NONNULL_END

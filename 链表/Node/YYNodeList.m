@@ -115,4 +115,22 @@
     [self reverseNodeListMethod3:tmpNode];
     
 }
+
+
+/**
+ 判断是否存在环
+ */
++ (BOOL)checkHaveLoop:(YYNodeList *)nodeList {
+    YYNode * slow = nodeList.head;
+    YYNode * fast = nodeList.head;
+    
+    while (slow.next != nil && fast.next.next != nil) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) {
+            return YES;
+        }
+    }
+    return NO;
+}
 @end

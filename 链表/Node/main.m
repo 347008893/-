@@ -45,6 +45,9 @@ int main(int argc, const char * argv[]) {
         [nodeList printListNode];
         NSLog(@"head：%d",nodeList.head.data);
         NSLog(@"last：%d",nodeList.last.data);
+        
+        
+        NSLog(@"haveLoop：%@",[YYNodeList checkHaveLoop:nodeList]?@"YES":@"false");
     }
     return 0;
 }
