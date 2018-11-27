@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
         YYNodeList *nodeList = [[YYNodeList alloc]initWithData:0];
         [nodeList printListNode];
         
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 9; i++) {
             [nodeList appendNode:i+1];
         }
         [nodeList printListNode];
@@ -48,6 +48,13 @@ int main(int argc, const char * argv[]) {
         
         
         NSLog(@"haveLoop：%@",[YYNodeList checkHaveLoop:nodeList]?@"YES":@"false");
+        
+        YYNode *middle = [YYNodeList getMiddleNode:nodeList];
+        NSLog(@"middle:%d",middle.data);
+        
+        
     }
     return 0;
 }
+
+

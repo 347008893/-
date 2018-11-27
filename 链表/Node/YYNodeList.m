@@ -133,4 +133,19 @@
     }
     return NO;
 }
+
++ (YYNode *)getMiddleNode:(YYNodeList *)nodeList {
+    YYNode * slow = nodeList.head;
+    YYNode * fast = nodeList.head;
+    
+    while (fast != nil && fast.next != nil) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) {
+            return nil;
+        }
+    }
+    return slow;
+    
+}
 @end
