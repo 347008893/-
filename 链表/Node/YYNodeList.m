@@ -134,6 +134,7 @@
     return NO;
 }
 
+//中间结点
 + (YYNode *)getMiddleNode:(YYNodeList *)nodeList {
     YYNode * slow = nodeList.head;
     YYNode * fast = nodeList.head;
@@ -146,6 +147,34 @@
         }
     }
     return slow;
-    
+}
+
+//合并有序链表
++ (YYNodeList *)mergeNodeList:(YYNodeList *)nodeList1 nodeList2:(YYNodeList *)nodeList2 {
+    YYNodeList *newNodeList = [[YYNodeList alloc]initWithData:999];
+    YYNode *node1 = nodeList1.head;
+    YYNode *node2 = nodeList2.head;
+    while (node1 != nil && node2 != nil) {
+        YYNode * newNode = nil;
+        if (node1.data < node2.data) {
+            newNode = node1;
+            node1 = node1.next;
+        } else {
+            newNode = node2;
+            node2 = node2.next;
+        }
+        [newNodeList appendNode:newNode.data];
+    }
+    //一个链表先遍历结束
+    if (node1 != nil) {
+        newNodeList.last.next = node1;
+        newNodeList.last = nodeList1.last;
+    }
+    if (node2 != nil) {
+        newNodeList.last.next = node2;
+        newNodeList.last = nodeList2.last;
+    }
+    [newNodeList deleteNode:999];
+    return newNodeList;
 }
 @end

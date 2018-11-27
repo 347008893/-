@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"last：%d",nodeList.last.data);
 //
         
-        [nodeList reverseNodeListMethod3:nodeList.head];
+//        [nodeList reverseNodeListMethod3:nodeList.head];
         [nodeList printListNode];
         NSLog(@"head：%d",nodeList.head.data);
         NSLog(@"last：%d",nodeList.last.data);
@@ -52,7 +52,16 @@ int main(int argc, const char * argv[]) {
         YYNode *middle = [YYNodeList getMiddleNode:nodeList];
         NSLog(@"middle:%d",middle.data);
         
+        NSLog(@"===合并有序链表=====");
         
+        YYNodeList *nodeList1 = [[YYNodeList alloc]initWithData:0];
+        for (int i = 0; i < 9; i++) {
+            [nodeList1 appendNode:2 * i];
+        }
+        YYNodeList * mergeNodeList = [YYNodeList mergeNodeList:nodeList1 nodeList2:nodeList];
+        [mergeNodeList printListNode];
+        NSLog(@"head：%d",mergeNodeList.head.data);
+        NSLog(@"last：%d",mergeNodeList.last.data);
     }
     return 0;
 }

@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 //中间结点
 + (YYNode *)getMiddleNode:(YYNodeList *)nodeList;
+
+//合并有序链表
++ (YYNodeList *)mergeNodeList:(YYNodeList *)nodeList1 nodeList2:(YYNodeList *)nodeList2;
 @end
 
 NS_ASSUME_NONNULL_END
