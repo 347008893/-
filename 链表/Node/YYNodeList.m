@@ -100,7 +100,6 @@
 //递归
 - (void)reverseNodeListMethod3:(YYNode *)tmpNode {
     if (!tmpNode) {
-        
         return;
     }
     if (tmpNode.next == nil) {
@@ -113,7 +112,6 @@
     self.head = r;
     self.head.next = lastHead;
     [self reverseNodeListMethod3:tmpNode];
-    
 }
 
 
